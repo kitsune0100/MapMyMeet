@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:MapmyIndiaGLAndroidSDK_v6.7.11:unspecified@jar">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/MapmyIndiaGLAndroidSDK_v6.7.11/build/.transforms/508269291b247f7346d162a90f4a3403/jetified-MapmyIndiaGLAndroidSDK_v6.7.11/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/MapmyIndiaGLAndroidSDK_v6.7.11/build/.transforms/508269291b247f7346d162a90f4a3403/jetified-MapmyIndiaGLAndroidSDK_v6.7.11/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/MapmyIndiaGLAndroidSDK_v6.7.11/build/.transforms/508269291b247f7346d162a90f4a3403/jetified-MapmyIndiaGLAndroidSDK_v6.7.11/res" />
+      <root url="jar://$PROJECT_DIR$/MapmyIndiaGLAndroidSDK_v6.7.11/build/.transforms/508269291b247f7346d162a90f4a3403/jetified-MapmyIndiaGLAndroidSDK_v6.7.11/jars/libs/mapmyindia-rest-api-v2.2.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

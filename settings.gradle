@@ -1,0 +1,2 @@
+include ':app', ':MapmyIndiaGLAndroidSDK_v6.7.11'
+rootProject.name='MapTest'

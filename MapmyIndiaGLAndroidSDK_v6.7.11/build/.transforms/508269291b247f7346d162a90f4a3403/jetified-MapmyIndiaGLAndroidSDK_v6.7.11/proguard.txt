@@ -1,0 +1,62 @@
+# By default, the flags in this file are appended to flags specified
+# in ../sdk/tools/proguard/proguard-android.txt,
+# contents of this file will be appended into proguard-android.txt
+-keepattributes Signature, *Annotation*, EnclosingMethod
+
+# Reflection on classes from native code
+-keep class com.google.gson.JsonArray { *; }
+-keep class com.google.gson.JsonElement { *; }
+-keep class com.google.gson.JsonObject { *; }
+-keep class com.google.gson.JsonPrimitive { *; }
+-dontnote com.google.gson.**
+
+# dontnote for keeps the entry point x but not the descriptor class y
+-dontnote com.mapbox.mapboxsdk.maps.MapmyIndiaMap$OnFpsChangedListener
+-dontnote com.mapbox.mapboxsdk.style.layers.PropertyValue
+-dontnote com.mapbox.mapboxsdk.maps.MapmyIndiaMap
+-dontnote com.mapbox.mapboxsdk.maps.MapmyIndiaMapOptions
+-dontnote com.mapbox.mapboxsdk.log.LoggerDefinition
+-dontnote com.mapbox.android.core.location.LocationEnginePriority
+
+# config for okhttp 3.11.0, https://github.com/square/okhttp/pull/3354
+-dontwarn javax.annotation.**
+-dontnote okhttp3.internal.**
+-dontwarn org.codehaus.**
+
+# config for mapbox-sdk-geojson:3.0.1
+-keep class com.mapbox.geojson.** { *; }
+-dontwarn com.google.auto.value.**
+
+#MapmyIndia Service
+-keep class com.mmi.services.api.auth.model.** { *; }
+-keep class com.mmi.services.api.autosuggest.model.** { *; }
+-keep class com.mmi.services.api.directions.models.** { *; }
+-keep class com.mmi.services.api.distance.models.** { *; }
+-keep class com.mmi.services.api.distance.legacy.model.** { *; }
+-keep class com.mmi.services.api.geocoding.GeoCode { *; }
+-keep class com.mmi.services.api.geocoding.GeoCodeResponse { *; }
+-keep class  com.mmi.services.api.Place { *; }
+-keep class  com.mmi.services.api.PlaceResponse { *; }
+
+
+-keep class com.mmi.services.api.autosuggest.MapmyIndiaAutoSuggest { *; }
+-keep class com.mmi.services.api.directions.legacy.MapmyIndiaDirectionsLegacy { *; }
+-keep class com.mmi.services.api.directions.MapmyIndiaDirections { *; }
+-keep class com.mmi.services.api.distance.legacy.MapmyIndiaDistanceLegacy { *; }
+-keep class com.mmi.services.api.distance.MapmyIndiaDistanceMatrix { *; }
+-keep class com.mmi.services.api.eloc.MapmyIndiaELoc { *; }
+-keep class com.mmi.services.api.geocoding.MapmyIndiaGeoCoding { *; }
+-keep class com.mmi.services.api.hateaosnearby.MapmyIndiaHateosNearby { *; }
+-keep class com.mmi.services.api.nearby.MapmyIndiaNearby { *; }
+-keep class com.mmi.services.api.reversegeocode.MapmyIndiaReverseGeoCode { *; }
+-keep class com.mmi.services.api.textsearch.MapmyIndiaTextSearch { *; }
+-keep class com.mmi.services.exception.ServicesException { *; }
+
+
+
+# config for additional notes
+-dontnote org.robolectric.Robolectric
+-dontnote libcore.io.Memory
+-dontnote com.google.protobuf.**
+-dontnote android.net.**
+-dontnote org.apache.http.**

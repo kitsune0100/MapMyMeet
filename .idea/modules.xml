@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MapTest.iml" filepath="$PROJECT_DIR$/MapTest.iml" group="MapTest" />
+      <module fileurl="file://$PROJECT_DIR$/MapmyIndiaGLAndroidSDK_v6.7.11/MapmyIndiaGLAndroidSDK_v6.7.11.iml" filepath="$PROJECT_DIR$/MapmyIndiaGLAndroidSDK_v6.7.11/MapmyIndiaGLAndroidSDK_v6.7.11.iml" group="MapTest/MapmyIndiaGLAndroidSDK_v6.7.11" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="MapTest/app" />
+    </modules>
+  </component>
+</project>
