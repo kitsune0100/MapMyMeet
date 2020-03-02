@@ -32,6 +32,8 @@ public class Settings extends AppCompatActivity {
     int[] images={R.drawable.laptop,R.mipmap.books_foreground,R.drawable.science,R.drawable.med,R.drawable.guitar,R.drawable.business,R.drawable.personal,R.drawable.maths,R.drawable.arch,R.drawable.art,R.drawable.phil};
     String[] text={"Development","Literature","Science","Health","Music","Business","Personal Development","Maths","Architecture","Art","Philosophy"};
     ArrayList<String> resultList= new ArrayList<String>();
+    ArrayList<String> chosen=new ArrayList<>();
+    Double chosen_radius;
     TextView countText;
     SeekBar seekBar;
     TextView kilometers;
@@ -47,11 +49,15 @@ public class Settings extends AppCompatActivity {
         countText= findViewById(R.id.count);
         kilometers=findViewById(R.id.kms);
         seekBar=findViewById(R.id.seekBar);
+        chosen=getIntent().getExtras().getStringArrayList("chosen");
+        chosen_radius=getIntent().getExtras().getDouble("radius");
         //Loop to create cards for each interest
         for(int i=0;i<11;i++)
         {
             createCard(i);
         }
+        seekBar.setProgress(chosen_radius.intValue());
+        kilometers.setText(String.valueOf(chosen_radius.intValue())+" Kilometers");
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -82,6 +88,7 @@ public class Settings extends AppCompatActivity {
                 finish();
             }
         });
+
     }
     //function to create card
     protected void createCard(int i)
@@ -102,6 +109,9 @@ public class Settings extends AppCompatActivity {
         add_view.setText(text[i]);
         cardView.addView(add_view);
         linearLayout.addView(cardView);
+        if(chosen.contains(text[i])) {
+            setTrue(add_view,cardView);
+        }
         //setting listener for each card
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,5 +138,14 @@ public class Settings extends AppCompatActivity {
                 }
             }
         });
+    }
+    protected void setTrue(threeviews add_view,CardView cardView) {
+        vibe.vibrate(50);
+        add_view.setCheckBoxTrue(); //making it true
+        resultList.add(add_view.getStringText()); //adding to interest list
+        countTextCount++;
+        String newtext= countTextCount+" Selected";
+        countText.setText(newtext);
+        cardView.setBackground(getDrawable(R.drawable.card_checked_background));
     }
 }

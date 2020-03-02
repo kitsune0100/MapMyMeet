@@ -72,7 +72,6 @@ public class HostActivity extends AppCompatActivity implements TextWatcher,OnIte
         interestAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         interests.setAdapter(interestAdapter);
     }
-
     @Override
     public void onItemSelected(AdapterView<?> parent,View view,int position,long id)
     {

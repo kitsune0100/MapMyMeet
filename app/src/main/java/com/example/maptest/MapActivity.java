@@ -47,6 +47,7 @@ import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 
 import org.w3c.dom.Text;
 
+import java.net.Inet4Address;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -136,6 +137,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             {
                 StringBuilder string= new StringBuilder();
                 userData= data.getStringArrayListExtra("mapdata");
+                radius=Double.parseDouble(userData.get(userData.size()-1));
+                userData.remove(userData.size()-1);
                 for(String s: userData)
                 {
                     string.append(s);
@@ -208,7 +211,10 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch(item.getItemId()){
-                case R.id.settings : startActivityForResult(new Intent(MapActivity.this,Selector.class),4);
+                case R.id.settings :    Intent intent=new Intent(MapActivity.this, Settings.class);
+                                        intent.putStringArrayListExtra("chosen",userData);
+                                        intent.putExtra("radius",radius);
+                                        startActivityForResult(intent,4);
                                         return true;
                                         //break;
                 case R.id.host: startActivityForResult(new Intent(MapActivity.this, HostActivity.class),5);
