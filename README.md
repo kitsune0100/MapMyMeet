@@ -1,5 +1,5 @@
 # MapMyMeet
-An android application uses to bring together people with common interests.
+An android application used to bring together people with common interests. Built in under 5 days for a Hackathon by MapMyIndia.
 # SnapShots of the App
 ## Greet Screen
 ![Greet Screen](first_screen.jpeg) 
